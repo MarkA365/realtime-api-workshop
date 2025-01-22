@@ -9,6 +9,7 @@ from agents.activation import activation_assistant
 from agents.sales import sales_assistant
 from agents.root import root_assistant
 from agents.technical import technical_assistant
+from agents.billing import billing_assistant
 
 load_dotenv(override=True)
 
@@ -126,6 +127,7 @@ async def setup_openai_realtime():
     openai_realtime.assistant.register_agent(activation_assistant)
     openai_realtime.assistant.register_agent(sales_assistant)
     openai_realtime.assistant.register_agent(technical_assistant)
+    openai_realtime.assistant.register_agent(billing_assistant)
 
     # Register the root agent last to ensure every agent knows each other.
     openai_realtime.assistant.register_root_agent(root_assistant)
